@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<title>Redirecting…</title>
-</head>
-<body>
-<p id="m">Redirecting…</p>
-<script id="maria-links" type="application/json">{"cheesy-ground-beef-tater-tot-casserole":"https://lifewithzoe.com/cheesy-ground-beef-tater-tot-casserole/","cheesy-ground-beef-and-rice-casserole":"https://lifewithzoe.com/cheesy-ground-beef-and-rice-casserole/","cheesy-rotini-pasta-with-garlic-butter-sauce-and-ground-beef":"https://lifewithzoe.com/cheesy-rotini-pasta-with-garlic-butter-sauce-and-ground-beef/","cheesy-taco-potatoes":"https://lifewithzoe.com/cheesy-taco-potatoes/","cottage-cheese-ground-beef-and-sweet-potato-bowls":"https://lifewithzoe.com/cottage-cheese-ground-beef-and-sweet-potato-bowls/","creamy-beef-and-bowtie-pasta":"https://lifewithzoe.com/creamy-beef-and-bowtie-pasta/","creamy-italian-spaghetti-ground-beef-one-pot-meal":"https://lifewithzoe.com/creamy-italian-spaghetti-ground-beef-one-pot-meal/","creamy-rotel-pasta-ground-beef":"https://lifewithzoe.com/creamy-rotel-pasta-ground-beef/","creamy-rotel-pasta-with-ground-beef":"https://lifewithzoe.com/creamy-rotel-pasta-with-ground-beef/","creamy-velveeta-beef-stroganoff-and-penne-pasta":"https://lifewithzoe.com/creamy-velveeta-beef-stroganoff-and-penne-pasta/"}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lifewithzoe.com</title>
+<style>html,body{margin:0;background:#fff}</style>
+<script id="maria-links" type="application/json">{"cheesy-ground-beef-tater-tot-casserole":"https://lifewithzoe.com/cheesy-ground-beef-tater-tot-casserole/","cheesy-ground-beef-and-rice-casserole":"https://lifewithzoe.com/cheesy-ground-beef-and-rice-casserole/","cheesy-rotini-pasta-with-garlic-butter-sauce-and-ground-beef":"https://lifewithzoe.com/cheesy-rotini-pasta-with-garlic-butter-sauce-and-ground-beef/","cheesy-taco-potatoes":"https://lifewithzoe.com/cheesy-taco-potatoes/","cottage-cheese-ground-beef-and-sweet-potato-bowls":"https://lifewithzoe.com/cottage-cheese-ground-beef-and-sweet-potato-bowls/","creamy-beef-and-bowtie-pasta":"https://lifewithzoe.com/creamy-beef-and-bowtie-pasta/","creamy-italian-spaghetti-ground-beef-one-pot-meal":"https://lifewithzoe.com/creamy-italian-spaghetti-ground-beef-one-pot-meal/","creamy-rotel-pasta-ground-beef":"https://lifewithzoe.com/creamy-rotel-pasta-ground-beef/","creamy-rotel-pasta-with-ground-beef":"https://lifewithzoe.com/creamy-rotel-pasta-with-ground-beef/","creamy-velveeta-beef-stroganoff-and-penne-pasta":"https://lifewithzoe.com/creamy-velveeta-beef-stroganoff-and-penne-pasta/","cowboy-candy-sweet-hot-pickled-peppers-recipe":"https://lifewithzoe.com/cowboy-candy-sweet-hot-pickled-peppers-recipe/","creamy-crockpot-mac-and-cheese":"https://lifewithzoe.com/creamy-crockpot-mac-and-cheese/","creamy-crockpot-tortellini-alfredo":"https://lifewithzoe.com/creamy-crockpot-tortellini-alfredo/","crock-pot-cheesesteak-tortellini":"https://lifewithzoe.com/crock-pot-cheesesteak-tortellini/","crock-pot-hot-chocolate":"https://lifewithzoe.com/crock-pot-hot-chocolate/"}</script>
 <script>
 (function () {
   var links = JSON.parse(document.getElementById("maria-links").textContent);
@@ -16,7 +15,7 @@
   try { slug = decodeURIComponent(parts.shift() || ""); } catch (e) {}
   slug = slug.toLowerCase().replace(/\/+$/, "");
   var to = links[slug];
-  if (!to) { document.title = "Page not found"; document.getElementById("m").textContent = "Page not found."; return; }
+  if (!to) { document.title = "Page not found"; document.addEventListener("DOMContentLoaded", function () { document.body.textContent = "Page not found."; }); return; }
   var extra = parts.filter(Boolean).join("&");
   if (extra) {
     var h = to.indexOf("#"), hash = h < 0 ? "" : to.slice(h), u = h < 0 ? to : to.slice(0, h);
@@ -25,5 +24,7 @@
   location.replace(to);
 })();
 </script>
+</head>
+<body>
 </body>
 </html>
